@@ -4,7 +4,7 @@
 \alias{calc_WOE}
 \title{Weight of evidence (WOE) calculation}
 \usage{
-calc_WOE(data, var, target, n_bins, output, marker)
+calc_WOE(data, var, target, n_bins, output, marker, print_result = 0)
 }
 \arguments{
 \item{data}{input data frame}
@@ -18,10 +18,12 @@ calc_WOE(data, var, target, n_bins, output, marker)
 \item{output}{location to save final result}
 
 \item{marker}{short name for the data in quotes}
+
+\item{print_result}{0/1. Default value is set to 0, which means the final result will not be displayed.}
 }
 \value{
-No output. The function saves a table that contains the WOE value for each bin. 
-The saved table includes the following columns.
+The function returns a table that contains the WOE value for each bin only when print_result is 1.
+Otherwise, the function saves the table in output. The table contains the following columns.
 \itemize{
 \item Bin                     : The bin number;
 \item lbound                  : The minimum value of var in the bin;
@@ -41,7 +43,7 @@ events to the proportion of non-events in a particular bin/category.
 }
 \examples{
 location <- here::here()
-calc_WOE(titanic_train, "Age", "Survived", 4, location, "Titanic")
+calc_WOE(titanic_train, "Age", "Survived", 4, location, "Titanic", print_result = 1)
 }
 \seealso{
 \url{https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html} used as reference for coding

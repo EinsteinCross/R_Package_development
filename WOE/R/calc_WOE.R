@@ -2,14 +2,15 @@
 #' 
 #' This function calculates Weight of evidence. Mathematically, it is equal to the natural logarithm of proportion of
 #' events to the proportion of non-events in a particular bin/category. 
-#' @param data    input data frame
-#' @param var     variable name in quotes
-#' @param target  target variable name in quotes
-#' @param n_bins  Number of bins
-#' @param output  location to save final result
-#' @param marker  short name for the data in quotes
-#' @return No output. The function saves a table that contains the WOE value for each bin. 
-#' The saved table includes the following columns.
+#' @param data         input data frame
+#' @param var          variable name in quotes
+#' @param target       target variable name in quotes
+#' @param n_bins       Number of bins
+#' @param output       location to save final result
+#' @param marker       short name for the data in quotes
+#' @param print_result 0/1. Default value is set to 0, which means the final result will not be displayed.
+#' @return The function returns a table that contains the WOE value for each bin only when print_result is 1.
+#' Otherwise, the function saves the table in output. The table contains the following columns.
 #' \itemize{
 #' \item Bin                     : The bin number;
 #' \item lbound                  : The minimum value of var in the bin;
@@ -28,9 +29,9 @@
 #' @export 
 #' @examples
 #' location <- here::here()
-#' calc_WOE(titanic_train, "Age", "Survived", 4, location, "Titanic")
+#' calc_WOE(titanic_train, "Age", "Survived", 4, location, "Titanic", print_result = 1)
 
-calc_WOE <- function(data, var, target, n_bins, output, marker){
+calc_WOE <- function(data, var, target, n_bins, output, marker, print_result = 0){
   
   require(dplyr)
   require(rlang)
@@ -70,6 +71,7 @@ calc_WOE <- function(data, var, target, n_bins, output, marker){
       bin_prop_tot_non_events = bin_n_non_events/n_tot_non_events,
       WOE = log(bin_prop_tot_events/bin_prop_tot_non_events)
     )
-    
-  save(WOE_table, file = paste(output, marker, "_", var, "_WOE_table.rda", sep = ""))
+  
+  if(print_result == 1){return(WOE_table)} 
+  else {save(WOE_table, file = paste(output, marker, "_", var, "_WOE_table.rda", sep = ""))}
 }
