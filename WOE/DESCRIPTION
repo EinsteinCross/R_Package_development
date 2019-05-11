@@ -1,5 +1,5 @@
 Package: WOE
-Title: Calculate and plot Weight of Evidence
+Title: Weight of Evidence
 Version: 0.0.0.9000
 Authors@R: person("Hanish", "Kusumanchi", email = "manikantahanish@gmail.com", role = c("aut", "cre"))
 Description: This package contains two functions. One function calculates the WOE values for a given variable in a dataset. The other function creates a plot that shows the WOE values for each bin in that variable.
