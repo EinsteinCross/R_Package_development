@@ -4,7 +4,7 @@
 \alias{plot_WOE}
 \title{Plot Weight of evidence (WOE)}
 \usage{
-plot_WOE(data, var, target, n_bins, output, marker, plot_y_limits)
+plot_WOE(data, var, target, n_bins, output, marker)
 }
 \arguments{
 \item{data}{input data frame}
@@ -18,8 +18,6 @@ plot_WOE(data, var, target, n_bins, output, marker, plot_y_limits)
 \item{output}{location to save the plot}
 
 \item{marker}{short name for the data in quotes}
-
-\item{plot_y_limits}{Limits of y-axis on plot. Example: c(0,6) means displayed y-axis lies between 0 and 6.}
 }
 \value{
 The function returns WOE plot for the given variable. If there are missing records, they will be classified
@@ -30,7 +28,7 @@ This function plots Weight of evidence.
 }
 \examples{
 location <- here::here()
-plot_WOE(titanic_train, "Age", "Survived", 4, location, "Titanic", c(0,0.3))
+plot_WOE(titanic_train, "Age", "Survived", 4, location, "Titanic")
 }
 \author{
 Hanish M Kusumanchi
