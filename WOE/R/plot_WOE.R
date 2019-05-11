@@ -32,6 +32,6 @@ plot_WOE <- function(data, var, target, n_bins, output, marker){
     theme(panel.border = element_rect(color = "grey"),
           plot.title = element_text(size = 10))
   
-  save(WOE_plot, file = paste(output, marker, "_", var, "_", n_bins, "bins_WOE_plot.jpg", sep = ""))
+  ggsave(filename = paste(output, marker, "_", var, "_", n_bins, "bins_WOE_plot.jpg", sep = ""), plot = WOE_plot)
   return(WOE_plot)
 }
