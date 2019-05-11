@@ -12,16 +12,16 @@
 #' @return The function returns a table that contains the WOE value for each bin only when print_result is 1.
 #' Otherwise, the function saves the table in output. The table contains the following columns.
 #' \itemize{
-#' \item Bin                     : The bin number;
-#' \item lbound                  : The minimum value of var in the bin;
-#' \item ubound                  : The maximum value of var in the bin;
-#' \item bin_n_events            : Number of events in the bin;
-#' \item bin_n_non_events        : Number of non-events in the bin;
-#' \item n_tot_events            : Number of total events in the data;
-#' \item n_tot_non_events        : Number of total non-events in the data;
-#' \item bin_prop_tot_events     : Proportion of events in the bin to the total events;
-#' \item bin_prop_tot_non_events : Proportion of non-events in the bin to the total non-events;
-#' \item WOE                     : Weight of evidence value.
+#' \item Bin                     : The bin number
+#' \item lbound                  : The minimum value of var in the bin
+#' \item ubound                  : The maximum value of var in the bin
+#' \item bin_n_events            : Number of events in the bin
+#' \item bin_n_non_events        : Number of non-events in the bin
+#' \item n_tot_events            : Number of total events in the data
+#' \item n_tot_non_events        : Number of total non-events in the data
+#' \item bin_prop_tot_events     : Proportion of events in the bin to the total events
+#' \item bin_prop_tot_non_events : Proportion of non-events in the bin to the total non-events
+#' \item WOE                     : Weight of evidence value
 #' }
 #' @author Hanish M Kusumanchi
 #' @seealso \url{https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html} used as reference for coding
